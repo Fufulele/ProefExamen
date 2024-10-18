@@ -1,5 +1,24 @@
 <?php
-session_start();
+session_start();  
+
+
+$servername = "localhost";
+$username = "root"; 
+$password = ""; 
+$database = "webshop"; 
+
+// Probeer verbinding te maken met de database
+$conn = new mysqli($servername, $username, $password, $database);
+
+// Controleer de verbinding
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+
+// Sluit de databaseverbinding aan het einde van het script
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -9,15 +28,18 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winkelwagen</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../fotos/favicon-real.svg" type="image/x-icon">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="../fotos/LogoRM.png" alt="Logo">
+            <a href="http://localhost/ProefExamen/Code-Webshop/">
+                <img src="../fotos/LogoRM.png" alt="Logo">
+            </a>
         </div>
         <nav>
             <ul>
-                <li><a href="././Tenues/kleding.php">Tenues</a></li>
+                <li><a href="/ProefExamen/Code-Webshop/Tenues/kleding.php">Tenues</a></li>
                 <li><a href="#">Uitverkoop</a></li>
             </ul>
         </nav>
@@ -30,22 +52,9 @@ session_start();
         </div>        
     </header>
 
-
     <main>
-        <h2>Jouw geselecteerde shirts:</h2>
-
-        <?php if (!empty($_SESSION['cart'])): ?>
-            <ul>
-                <?php foreach ($_SESSION['cart'] as $item): ?>
-                    <li>
-                        Shirt maat: <?= htmlspecialchars($item['size']) ?>, Naam: <?= htmlspecialchars($item['name']) ?>, Nummer: <?= htmlspecialchars($item['number']) ?>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-            <a href="checkout.php">Ga naar afrekenen</a>
-        <?php else: ?>
-            <p>Je winkelwagen is leeg.</p>
-        <?php endif; ?>
+        <h1>Welkom bij onze Webshop</h1>
+        <p>Verken ons uitgebreide assortiment producten.</p>
     </main>
 
     <footer>

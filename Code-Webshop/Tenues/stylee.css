@@ -1,9 +1,11 @@
+/* Basis stijlen */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background: #f5f5f5;
 }
+
 header {
     background-color: #ffffff;
     padding: 20px;
@@ -12,6 +14,7 @@ header {
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .logo img {
     width: 100px;
 }
@@ -42,11 +45,13 @@ nav ul li a {
     text-decoration: none;
     color: #333;
 }
+
+/* Container voor productinformatie */
 .container {
     display: flex;
     padding: 20px;
     background: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .product-image img {
@@ -78,8 +83,6 @@ h1 {
     margin: 10px 0;
 }
 
-
-
 select, input[type="text"] {
     padding: 5px;
     width: 100%;
@@ -99,6 +102,8 @@ select, input[type="text"] {
 .add-to-cart:hover {
     background-color: #0056b3;
 }
+
+/* Footer stijlen */
 footer {
     background-color: #002244;
     color: white;
@@ -138,44 +143,6 @@ footer {
     text-decoration: underline;
 }
 
-.sign-up-btn {
-    display: inline-block;
-    background-color: #4e44ff;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.footer-app {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.footer-app img {
-    margin: 10px;
-    height: 40px;
-}
-
-.footer-payments {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.footer-payments img {
-    width: 250px;
-}
-
-.footer-social {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.footer-social a {
-    margin: 0 10px;
-}
-
 .footer-social img {
     height: 30px;
 }
@@ -189,4 +156,28 @@ footer {
 
 .footer-bottom p {
     margin: 0;
+}
+
+/* Maatselectieknoppen stijlen */
+.size-btn {
+    margin: 5px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    padding: 8px 16px;
+    border-radius: 50px; /* Geeft de knoppen een afgeronde vorm */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    font-weight: bold;
+    color: #333;
+}
+
+.size-btn:hover, .size-btn:focus {
+    border-color: #888;
+}
+
+.size-btn.selected {
+    border-color: #0044cc;
+    color: #0044cc;
+    box-shadow: 0 4px 8px rgba(0, 68, 204, 0.3); /* Voegt een subtiele schaduw toe rond de geselecteerde knop */
 }

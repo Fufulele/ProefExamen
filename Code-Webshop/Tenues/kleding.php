@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Madrid Shirt </title>
     <link rel="stylesheet" href="stylee.css">
+    <link rel="icon" href="../fotos/favicon-real.svg" type="image/x-icon">
     <style>
         .size-btn {
             margin: 5px;
@@ -45,13 +46,18 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="../fotos/LogoRM.png" alt="Logo">
-        </div>
+        
+    <div class="logo">
+    <a href="http://localhost/ProefExamen/Code-Webshop/">
+        <img src="../fotos/LogoRM.png" alt="Logo">
+    </a>
+</div>
+
         <nav>
             <ul>
-                <li><a href="././Tenues/kleding.php">Tenues</a></li>
-                <li><a href="#">Uitverkoop</a></li>
+            
+            <li><a href="/ProefExamen/Code-Webshop/Tenues/kleding.php">Tenues</a></li>
+            <li><a href="#">Uitverkoop</a></li>
             </ul>
         </nav>
         <div class="search-bar">
@@ -110,6 +116,116 @@
             <button class="add-to-cart" onclick="addToCart()">Toevoegen aan Winkelwagen</button>
         </div>
     </div>
+
+<br>
+<br>
+<br>
+<br>
+    <?php
+    $product = [
+        'name' => 'Heren Uitshirt 24/25 Wit',
+        'price' => 190.00,
+        'sizes' => ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'],
+        'badges' => [
+            'none' => 'Geen',
+            'cl' => 'Champions League +€25,00',
+            'laliga' => 'La Liga +€25,00'
+        ]
+    ];
+    ?>
+
+    <div class="container">
+        <div class="product-image">
+            <img src="../fotos/RealShirt-Uit.png" alt="Real Madrid Uitshirt">
+        </div>
+        <div class="product-info">
+            <h1><?php echo $product['name']; ?></h1>
+            <p class="price">€<?php echo number_format($product['price'], 2); ?></p>
+            <div class="selectors">
+                <div class="size-selector">
+                    <label>Maat:</label>
+                    <div class="sizes">
+                        <?php foreach ($product['sizes'] as $size): ?>
+                            <button type="button" class="size-btn" onclick="selectSize(this)"><?php echo $size; ?></button>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="badge-selector">
+                    <label>Badge:</label>
+                    <select>
+                        <?php foreach ($product['badges'] as $badgeKey => $badgeValue): ?>
+                            <option value="<?php echo $badgeKey; ?>"><?php echo $badgeValue; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="name-number">
+                    <label>Naam:</label>
+                    <input type="text" placeholder="Typ hier je naam.">
+                    <label>Nummer:</label>
+                    <input type="number" placeholder="Typ hier je nummer.">
+                </div>
+            </div>
+            
+            <button class="add-to-cart" onclick="addToCart()">Toevoegen aan Winkelwagen</button>
+        </div>
+    </div>
+
+
+<br>
+<br>
+<br>
+
+    <?php
+    $product = [
+        'name' => 'Heren Derdeshirt 24/25 Wit',
+        'price' => 190.00,
+        'sizes' => ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL'],
+        'badges' => [
+            'none' => 'Geen',
+            'cl' => 'Champions League +€25,00',
+            'laliga' => 'La Liga +€25,00'
+        ]
+    ];
+    ?>
+
+    <div class="container">
+        <div class="product-image">
+            <img src="../fotos/RealShirt-Drie.png" alt="Real Madrid Thuisshirt">
+        </div>
+        <div class="product-info">
+            <h1><?php echo $product['name']; ?></h1>
+            <p class="price">€<?php echo number_format($product['price'], 2); ?></p>
+            <div class="selectors">
+                <div class="size-selector">
+                    <label>Maat:</label>
+                    <div class="sizes">
+                        <?php foreach ($product['sizes'] as $size): ?>
+                            <button type="button" class="size-btn" onclick="selectSize(this)"><?php echo $size; ?></button>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="badge-selector">
+                    <label>Badge:</label>
+                    <select>
+                        <?php foreach ($product['badges'] as $badgeKey => $badgeValue): ?>
+                            <option value="<?php echo $badgeKey; ?>"><?php echo $badgeValue; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="name-number">
+                    <label>Naam:</label>
+                    <input type="text" placeholder="Typ hier je naam...">
+                    <label>Nummer:</label>
+                    <input type="number" placeholder="Typ hier je nummer...">
+                </div>
+            </div>
+            <button class="add-to-cart" onclick="addToCart()">Toevoegen aan Winkelwagen</button>
+        </div>
+    </div>
+
+
+
+
 
     <footer>
         <div class="footer-container">
